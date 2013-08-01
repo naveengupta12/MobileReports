@@ -1,0 +1,583 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width" />
+		<title>OEGINDIA - DGR Report</title> 
+		
+		<script src="phonegap.js" type="text/javascript" charset="utf-8"></script>
+		
+		
+    <link rel="stylesheet"  href="assets/css/jquery.mobile-1.3.0-beta.1.css">
+	<link rel="stylesheet" href="assets/css/jqm-demos.css">
+	<script src="assets/js/jquery-1.7.1.min.js"></script>
+	<script src="assets/js/jquery.mobile-1.3.0-beta.1.js"></script>
+    
+    <link rel="stylesheet" href="assets/css/responsive-tables.css">
+	<script src="assets/js/responsive-tables.js"></script>
+
+    <!--<script src="files/resources/lib/datagrid/js/jquery.mobile.demos.js"></script>-->
+	<!-- We're using a style block to make it easy to view the custom styles -->
+	<!-- In production, these should be added to an custom.css file loaded in the head -->
+	<style>
+	.th-groups th { 
+		text-align:center;
+		background-color:rgba(0,0,0,.1);
+		border-right:1px solid #fff;
+	 }
+	.th-groups th.totals { 
+		background-color:rgba(0,0,0,.5);
+		color:#fff;
+		text-shadow:none;
+	 }
+
+
+	/* Show priority 1 at 320px (20em x 16px) */ 
+	@media screen and (min-width: 20em) {
+	   table td, table th {
+           font-size: 70%;
+        }
+	}
+	/* Show priority 2 at 480px (30em x 16px) */ 
+	@media screen and (min-width: 30em) {
+	   table td, table th {
+           font-size: 100%;
+        }
+	}
+	/* Show priority 3 at 640px (40em x 16px) */ 
+	@media screen and (min-width: 40em) {
+	   table td, table th {
+           font-size: 80%;
+        }
+	}
+	/* Show priority 4 at 800px (50em x 16px) */ 
+	@media screen and (min-width: 50em) {
+	  table td, table th {
+           font-size: 90%;
+        }
+	}
+	/* Show priority 5 at 960px (60em x 16px) */ 
+	@media screen and (min-width: 60em) {
+	  table td, table th {
+           font-size: 100%;
+        }
+	}
+	/* Show priority 6 at 1200 (75em x 16px) */ 
+	@media screen and (min-width: 75em) {
+	 table td, table th {
+           font-size: 100%;
+        }
+	}
+	
+	</style>
+		
+	</head>
+	<body>
+ 		<div data-role="page">
+
+      <div data-role="header" data-theme="f">
+      <h1>DGR Report</h1>
+      <a href="" data-icon="home" data-iconpos="notext" data-ajax="false">Home</a>
+   </div><!-- /header -->
+
+   <div data-role="content">
+        <h2>Site Name - Serial No</h2>
+        <h3>Created Date - 01-08-2013</h3>
+				<div data-demo-html="true" data-demo-css="true">
+
+         	<!-- <table data-role="table" id="financial-table" data-column-btn-theme="b" data-column-popup-theme="a" data-mode="columntoggle" class="table-stroke"> -->
+				<table class="responsive">
+                <thead>
+					<tr class="th-groups">
+						<td></td>
+						<th colspan="3" data-priority="2">Unit-1 Data</th>
+						<th colspan="3" data-priority="3">Unit-2 Data</th>
+						<th colspan="3" data-priority="1" class="totals">Station Data</th>
+						
+					</tr> 
+					<tr>
+						<th></th>
+
+						<th>ONDATE</th>
+						<th>MTD</th>
+						<th>YTD</th>
+
+						<th>ONDATE</th>
+						<th>MTD</th>
+						<th>YTD</th>
+
+                        <th>ONDATE</th>
+						<th>MTD</th>
+						<th>YTD</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr>
+						<th>Actual Total Gen</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Auxilary Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+                    
+					<tr>
+						<th>GCV</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					
+
+					<tr>
+						<th>Avg Load</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Boiler steam Generation</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>TG Steam Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Process steam Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Deemed Generation</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>DM Water Cosumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>DM Water Productions</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Raw Water Cosumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Total Fuel Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>LDO Consumptions</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>LOI</th>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+                        <td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+
+					<tr>
+						<th>OPLF</th>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+                        <td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+
+					<tr>
+						<th>Plant Heat Rate</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Power Export To Grid</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Power Import</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Power To Process</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Spc. Steam Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Spc. Fuel Consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Spc. DM Water consumption</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Spc. DM Water consumption with Steam Gen</th>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+                        <td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+
+					<tr>
+						<th>Steaming Rate per Kg of Coal</th>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+						<td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+
+                        <td>3360000</td>
+						<td>N/A</td>
+						<td>N/A</td>
+					</tr>
+
+					<tr>
+						<th>Stoppage Hours</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Unit running hours</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+					<tr>
+						<th>Evaporation Ratio</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+
+                    <tr>
+						<th>Boiler Efficiency</th>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+						<td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+
+                        <td>3360000</td>
+						<td>3382000</td>
+						<td>16800000</td>
+					</tr>
+				</tbody>
+			</table>
+			
+		</div><!-- /data-demo -->
+
+			
+		    
+
+         </div><!-- /content -->
+
+         <div class="jqm-footer">
+               <p class="jqm-version"></p>
+            <p>&copy; 2010, 2013 jQuery Foundation and other contributors</p>
+         </div>
+
+         </div><!-- /page -->
+
+	</body>
+</html>
