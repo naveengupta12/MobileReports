@@ -29,7 +29,7 @@
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
   <access origin="http://192.168.1.168*"/>
-  
+  <access uri="*" subdomains="true" />
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
 </widget>
