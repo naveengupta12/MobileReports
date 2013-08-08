@@ -1,17 +1,17 @@
-document.addEventListener("deviceready", onDeviceReady, false);
+//document.addEventListener("deviceready", onDeviceReady, false);
 
-// PhoneGap is ready
-//
-function onDeviceReady() {
-    alert("device ready!!!");
+//// PhoneGap is ready
+////
+//function onDeviceReady() {
+//    alert("device ready!!!");
 
-}
+//}
 
 $(document).on('pagebeforeshow', '#login', function () {
     if (window.localStorage.getItem("username")) {
         $('#username').val(window.localStorage.getItem("username"));
         $('#password').val(window.localStorage.getItem("password"));
-        $('#remember').prop('checked', true);
+        $("input[type='checkbox']").attr("checked", true).checkboxradio("refresh");
     }
     $(document).on('click', '#submit', function () { // catch the form's submit event
         if ($('#username').val().length > 0 && $('#password').val().length > 0) {
@@ -45,6 +45,9 @@ $(document).on('pagebeforeshow', '#login', function () {
                         resultObject.formSubmitionResult = data;
                         $.mobile.changePage("#second");
 
+                    } else {
+                        alert("Username/Password is not valid!!");
+
                     }
 
 
@@ -60,7 +63,7 @@ $(document).on('pagebeforeshow', '#login', function () {
                 },
                 error: function (request, error) {
                     // This callback function will trigger on unsuccessful action                
-                    alert('Network error has occurred please try again!, ERROR:' + error);
+                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
                 }
             });
         } else {
