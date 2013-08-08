@@ -1,11 +1,14 @@
-//document.addEventListener("deviceready", onDeviceReady, false);
+document.addEventListener("deviceready", onDeviceReady, false);
 
-//// PhoneGap is ready
-////
-//function onDeviceReady() {
-//    alert("device ready!!!");
+// PhoneGap is ready
+//
+function onDeviceReady() {
+    document.addEventListener("backbutton", function (e) { 
+            e.preventDefault();
+            navigator.app.exitApp();
+    }, false);
 
-//}
+}
 
 $(document).on('pagebeforeshow', '#login', function () {
     if (window.localStorage.getItem("username")) {
