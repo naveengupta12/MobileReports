@@ -39,7 +39,7 @@
   <access subdomains="true" uri="http://192.168.1.168"/>
   <access subdomains="true" uri="http://192.168.1.168*"/>
   <access subdomains="true" uri="http://192.168.1.168:8080/Handler.ashx"/>
-  
+  <access subdomains="true" uri="http://192.168.1.168:8080*"/>
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
   <preference name="phonegap-version"           value="2.9.0" />
