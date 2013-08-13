@@ -29,7 +29,7 @@ $(document).on('pagebeforeshow', '#login', function () {
                 window.localStorage.clear();
             }
 
-            $.ajax({ url: 'http://192.168.1.168/mr/check.php',
+            $.ajax({ url: 'http://192.168.1.168/mr/content1.txt',
                 data: { email: email, pwd: pwd }, // Convert a form to a JSON string representation
                 dataType: 'html',
                 type: 'post',
@@ -44,7 +44,7 @@ $(document).on('pagebeforeshow', '#login', function () {
                     $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
                 },
                 success: function (data, textStatus, request) {
-                    if (data.indexOf('Site Name') != -1) {
+                    if (data.indexOf('responsive') != -1) {
                         resultObject.formSubmitionResult = data;
                         $.mobile.changePage("#second");
 
@@ -53,16 +53,6 @@ $(document).on('pagebeforeshow', '#login', function () {
 
                     }
 
-
-                    //                    if (result['success']) {
-                    //                        $.each(result['success'], function (key, val) {
-                    //                            alert(key);
-                    //                        });
-                    //                    } else {
-                    //                        alert("Invalid login!!, Please try again");
-
-                    //                    }
-
                 },
                 error: function (request, error) {
                     // This callback function will trigger on unsuccessful action                
@@ -70,15 +60,15 @@ $(document).on('pagebeforeshow', '#login', function () {
                 }
             });
         } else {
-            alert('Please fill all fields');
+            alert('Please enter Username & Password.');
         }
         return false; // cancel original event to prevent form submitting
     });
 });
 
 $(document).on('pagebeforeshow', '#second', function () {
-    $('#second [data-role="content"]').append(resultObject.formSubmitionResult);
-
+    $('#second [data-role="content"]').html(resultObject.formSubmitionResult);
+  
     var switched = false;
     var updateTables = function () {
         if (($(window).width() < 767) && !switched) {
