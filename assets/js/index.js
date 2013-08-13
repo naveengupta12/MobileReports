@@ -22,7 +22,7 @@ $(document).on('click', '#submit', function () { // catch the form's submit even
             window.localStorage.clear();
         }
 
-        $.ajax({ url: 'http://192.168.1.168:8080/Handler.ashx',
+        $.ajax({ url: 'http://192.168.1.168/mr/content.txt',
             data: { username: email, password: pwd }, // Convert a form to a JSON string representation
             dataType: 'text',
             type: 'post',
