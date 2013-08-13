@@ -29,7 +29,7 @@ $(document).on('pagebeforeshow', '#login', function () {
                 window.localStorage.clear();
             }
 
-            $.ajax({ url: 'http://192.168.1.168/mr/content1.txt',
+            $.ajax({ url: 'http://192.168.1.168/mr/check.php',
                 data: { email: email, pwd: pwd }, // Convert a form to a JSON string representation
                 dataType: 'html',
                 type: 'post',
