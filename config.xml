@@ -38,7 +38,7 @@
   <access subdomains="true" uri="http://192.168.1.168/mr/check.php"  />
   <access subdomains="true" uri="http://192.168.1.168"/>
   <access subdomains="true" uri="http://192.168.1.168*"/>
-  <access subdomains="true" uri="http://192.168.1.168/mr/*"/>
+  <access subdomains="true" uri="http://192.168.1.168:8080/Handler.ashx"/>
   
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->

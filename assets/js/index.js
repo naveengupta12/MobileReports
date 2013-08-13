@@ -9,61 +9,61 @@ function onDeviceReady() {
     }, false);
 
 }
+$(document).on('click', '#submit', function () { // catch the form's submit event
+    if ($('#username').val().length > 0 && $('#password').val().length > 0) {
+        // Send data to server through ajax call
+        // action is functionality we want to call and outputJSON is our data
+        var email = $('#username').val();
+        var pwd = $('#password').val();
+        if ($('#remember').is(':checked')) {
+            window.localStorage.setItem("username", email);
+            window.localStorage.setItem("password", pwd);
+        } else {
+            window.localStorage.clear();
+        }
 
+        $.ajax({ url: 'http://192.168.1.168:8080/Handler.ashx',
+            data: { username: email, password: pwd }, // Convert a form to a JSON string representation
+            dataType: 'text',
+            type: 'post',
+            async: false,
+            crossDomain: true,
+            beforeSend: function () {
+                // This callback function will trigger before data is sent
+                $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+            },
+            complete: function () {
+                // This callback function will trigger on data sent/received complete
+                $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
+            },
+            success: function (data, textStatus, request) {
+                if (data.indexOf('responsive') != -1) {
+                    resultObject.formSubmitionResult = data;
+                    $.mobile.changePage("#second");
+
+                } else {
+                    alert("Username/Password is not valid!!");
+
+                }
+
+            },
+            error: function (request, error) {
+                // This callback function will trigger on unsuccessful action                
+                alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
+            }
+        });
+    } else {
+        alert('Please enter Username & Password.');
+    }
+    return false; // cancel original event to prevent form submitting
+});
 $(document).on('pagebeforeshow', '#login', function () {
     if (window.localStorage.getItem("username")) {
         $('#username').val(window.localStorage.getItem("username"));
         $('#password').val(window.localStorage.getItem("password"));
         $("input[type='checkbox']").attr("checked", true).checkboxradio("refresh");
     }
-    $(document).on('click', '#submit', function () { // catch the form's submit event
-        if ($('#username').val().length > 0 && $('#password').val().length > 0) {
-            // Send data to server through ajax call
-            // action is functionality we want to call and outputJSON is our data
-            var email = $('#username').val();
-            var pwd = $('#password').val();
-            if ($('#remember').is(':checked')) {
-                window.localStorage.setItem("username", email);
-                window.localStorage.setItem("password", pwd);
-            } else {
-                window.localStorage.clear();
-            }
-
-            $.ajax({ url: 'http://192.168.1.168/mr/check.php',
-                data: { email: email, pwd: pwd }, // Convert a form to a JSON string representation
-                dataType: 'html',
-                type: 'post',
-                async: false,
-                crossDomain: true,
-                beforeSend: function () {
-                    // This callback function will trigger before data is sent
-                    $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-                },
-                complete: function () {
-                    // This callback function will trigger on data sent/received complete
-                    $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
-                },
-                success: function (data, textStatus, request) {
-                    if (data.indexOf('responsive') != -1) {
-                        resultObject.formSubmitionResult = data;
-                        $.mobile.changePage("#second");
-
-                    } else {
-                        alert("Username/Password is not valid!!");
-
-                    }
-
-                },
-                error: function (request, error) {
-                    // This callback function will trigger on unsuccessful action                
-                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
-                }
-            });
-        } else {
-            alert('Please enter Username & Password.');
-        }
-        return false; // cancel original event to prevent form submitting
-    });
+    
 });
 
 $(document).on('pagebeforeshow', '#second', function () {
