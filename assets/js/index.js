@@ -33,7 +33,7 @@ $(document).on('pagebeforeshow', '#login', function () {
                 data: { email: email, pwd: pwd }, // Convert a form to a JSON string representation
                 dataType: 'html',
                 type: 'post',
-                async: true,
+                async: false,
                 crossDomain: true,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
