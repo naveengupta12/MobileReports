@@ -2,7 +2,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	id		= "com.karya.mobilereports"
-	version 	= "1.0.0">
+	version 	= "1.1.0">
 
 	<name>Mobile Reports</name>
 
@@ -28,8 +28,8 @@
 
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
-  <access uri="http://192.168.1.168*" />
-  <access uri="http://192.168.1.168" subdomains="true" />
+  <access origin="http://192.168.1.168*"/>
+  <access uri="http://192.168.1.168/mr/content1.txt" subdomains="false" />
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
 </widget>
