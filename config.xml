@@ -28,8 +28,12 @@
 
 	<feature name="http://api.phonegap.com/1.0/geolocation"/>
 	<feature name="http://api.phonegap.com/1.0/network"/>
-  <access origin="http://192.168.1.168*"/>
-  <access uri="http://192.168.1.168/mr/content1.txt" subdomains="false" />
+  <access origin="http://192.168.1.168" subdomains="true"/>
+  <access uri="http://192.168.1.168/mr/content1.txt" subdomains="true" />
+
+  <feature id="blackberry.app" >
+    <param name="websecurity" value="disable" />
+  </feature>
 	<!-- sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
 </widget>
