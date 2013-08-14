@@ -25,7 +25,8 @@
 	<icon src="blurry.png" gap:role="default" />
 
     <gap:splash src="weirdo.png" />
-
+  
+  <access origin="http://futureclasses.com" subdomains="true"/>
   <access subdomains="true" uri="http://futureclasses.com"/>
   <access subdomains="true" uri="http://futureclasses.com/check.php"/>
   
