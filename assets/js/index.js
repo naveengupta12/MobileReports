@@ -26,7 +26,7 @@ function onDeviceReady() {
                 window.localStorage.clear();
             }
             alert("starting ajax");
-            $.ajax({ url: 'http://futureclasses.com/check.php',
+            $.ajax({ url: 'http://192.168.1.168/mr/check.php',
                 data: { username: email, password: pwd }, // Convert a form to a JSON string representation
                 dataType: 'text',
                 type: 'GET',
@@ -55,14 +55,14 @@ function onDeviceReady() {
                     }
 
                 },
-                error: function (xhr, ajaxOptions, thrownError) {
-                    alert("error");
-                    alert(thrownError);
-                }
-                //                error: function (request, error) {
-                //                    // This callback function will trigger on unsuccessful action                
-                //                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
-                //                }
+//                error: function (xhr, ajaxOptions, thrownError) {
+//                    alert("error");
+//                    alert(thrownError);
+//                }
+                error: function (request, error) {
+                     // This callback function will trigger on unsuccessful action                
+                   alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
+                  }
             });
         } else {
             alert('Please enter Username & Password.');
