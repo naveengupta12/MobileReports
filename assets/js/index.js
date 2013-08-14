@@ -7,57 +7,66 @@ function onDeviceReady() {
             e.preventDefault();
             navigator.app.exitApp();
     }, false);
-
-}
-$(document).on('click', '#submit', function () { // catch the form's submit event
-    if ($('#username').val().length > 0 && $('#password').val().length > 0) {
-        // Send data to server through ajax call
-        // action is functionality we want to call and outputJSON is our data
-        var email = $('#username').val();
-        var pwd = $('#password').val();
-        if ($('#remember').is(':checked')) {
-            window.localStorage.setItem("username", email);
-            window.localStorage.setItem("password", pwd);
-        } else {
-            window.localStorage.clear();
-        }
-        $.support.cors = true;
-        $.ajax({ url: 'http://futureclasses.com/check.php',
-            data: { username: email, password: pwd }, // Convert a form to a JSON string representation
-            dataType: 'jsonp',
-            type: 'GET',
-            async: true,
-            cache: false,
-            crossDomain: true,
-            beforeSend: function () {
-                // This callback function will trigger before data is sent
-                $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
-            },
-            complete: function () {
-                // This callback function will trigger on data sent/received complete
-                $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
-            },
-            success: function (data, textStatus, request) {
-                if (data.indexOf('responsive') != -1) {
-                    resultObject.formSubmitionResult = data;
-                    $.mobile.changePage("#second");
-
-                } else {
-                    alert("Username/Password is not valid!!");
-
-                }
-
-            },
-            error: function (request, error) {
-                // This callback function will trigger on unsuccessful action                
-                alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
-            }
-        });
-    } else {
-        alert('Please enter Username & Password.');
+    alert("onDeviceReady");
     }
-    return false; // cancel original event to prevent form submitting
-});
+    $(document).bind("mobileinit", function () {
+        alert("mobileinit");
+        $.support.cors = true;
+        $.mobile.allowCrossDomainPages = true;
+    });
+    $(document).on('click', '#submit', function () { // catch the form's submit event
+        if ($('#username').val().length > 0 && $('#password').val().length > 0) {
+            // Send data to server through ajax call
+            // action is functionality we want to call and outputJSON is our data
+            var email = $('#username').val();
+            var pwd = $('#password').val();
+            if ($('#remember').is(':checked')) {
+                window.localStorage.setItem("username", email);
+                window.localStorage.setItem("password", pwd);
+            } else {
+                window.localStorage.clear();
+            }
+            alert("starting ajax");
+            $.ajax({ url: 'http://futureclasses.com/check.php',
+                data: { username: email, password: pwd }, // Convert a form to a JSON string representation
+                dataType: 'jsonp',
+                type: 'GET',
+                async: true,
+                cache: false,
+                crossDomain: true,
+                beforeSend: function () {
+                    // This callback function will trigger before data is sent
+                    $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+                },
+                complete: function () {
+                    // This callback function will trigger on data sent/received complete
+                    $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
+                },
+                success: function (data, textStatus, request) {
+                    if (data.indexOf('responsive') != -1) {
+                        resultObject.formSubmitionResult = data;
+                        $.mobile.changePage("#second");
+
+                    } else {
+                        alert("Username/Password is not valid!!");
+
+                    }
+
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                        alert("error");
+                        alert(thrownError);
+                }
+//                error: function (request, error) {
+//                    // This callback function will trigger on unsuccessful action                
+//                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
+//                }
+            });
+        } else {
+            alert('Please enter Username & Password.');
+        }
+        return false; // cancel original event to prevent form submitting
+    });
 $(document).on('pagebeforeshow', '#login', function () {
     if (window.localStorage.getItem("username")) {
         $('#username').val(window.localStorage.getItem("username"));
