@@ -6,14 +6,13 @@ function onDeviceReady() {
     document.addEventListener("backbutton", function (e) { 
             e.preventDefault();
             navigator.app.exitApp();
-    }, false);
-    alert("onDeviceReady");
-    }
-    $(document).bind("mobileinit", function () {
-        alert("mobileinit");
+        }, false);
         $.support.cors = true;
         $.mobile.allowCrossDomainPages = true;
-    });
+        alert("onDeviceReady");
+
+    }
+    
     $(document).on('click', '#submit', function () { // catch the form's submit event
         if ($('#username').val().length > 0 && $('#password').val().length > 0) {
             // Send data to server through ajax call
@@ -34,6 +33,7 @@ function onDeviceReady() {
                 async: true,
                 cache: false,
                 crossDomain: true,
+                timeout: 5000,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
                     $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
