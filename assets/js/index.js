@@ -22,11 +22,12 @@ $(document).on('click', '#submit', function () { // catch the form's submit even
             window.localStorage.clear();
         }
 
-        $.ajax({ url: 'http://192.168.1.168/mr/content.txt',
+        $.ajax({ url: 'http://192.168.1.168/mr/check.php',
             data: { username: email, password: pwd }, // Convert a form to a JSON string representation
             dataType: 'text',
             type: 'post',
-            async: false,
+            async: true,
+            cache: false,
             crossDomain: true,
             beforeSend: function () {
                 // This callback function will trigger before data is sent
