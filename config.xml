@@ -25,12 +25,14 @@
 	<icon src="blurry.png" gap:role="default" />
 
     <gap:splash src="weirdo.png" />
-  
 
+  <access subdomains="true" uri="http://futureclasses.com"/>
+  <access subdomains="true" uri="http://futureclasses.com/check.php"/>
+  
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
   
-  
+  	<!-- 
   <access origin="http://192.168.1.168" subdomains="true"/>
   
   <access subdomains="true" uri="http://192.168.1.168"/>
@@ -43,7 +45,7 @@
   <access subdomains="true" uri="http://192.168.1.168/mr/content.txt"  />
   <access subdomains="true" uri="http://192.168.1.168/mr/check.php"  />
   
-	<!-- sample preference specification -->
+sample preference specification -->
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
   <preference name="phonegap-version"           value="2.9.0" />
 </widget>

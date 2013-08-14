@@ -22,7 +22,7 @@ $(document).on('click', '#submit', function () { // catch the form's submit even
             window.localStorage.clear();
         }
 
-        $.ajax({ url: 'http://192.168.1.168/mr/check.php',
+        $.ajax({ url: 'http://futureclasses.com/check.php',
             data: { username: email, password: pwd }, // Convert a form to a JSON string representation
             dataType: 'text',
             type: 'post',
