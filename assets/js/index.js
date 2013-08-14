@@ -36,7 +36,7 @@ function onDeviceReady() {
                 timeout: 5000,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
-                    alet("beforesend");
+                    alert("beforesend");
                     //$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
                 },
                 complete: function () {
