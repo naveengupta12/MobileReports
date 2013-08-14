@@ -21,7 +21,7 @@ $(document).on('click', '#submit', function () { // catch the form's submit even
         } else {
             window.localStorage.clear();
         }
-
+        $.support.cors = true;
         $.ajax({ url: 'http://futureclasses.com/check.php',
             data: { username: email, password: pwd }, // Convert a form to a JSON string representation
             dataType: 'jsonp',
