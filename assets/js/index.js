@@ -12,7 +12,7 @@ function onDeviceReady() {
         alert("onDeviceReady");
 
     }
-    
+
     $(document).on('click', '#submit', function () { // catch the form's submit event
         if ($('#username').val().length > 0 && $('#password').val().length > 0) {
             // Send data to server through ajax call
@@ -28,19 +28,21 @@ function onDeviceReady() {
             alert("starting ajax");
             $.ajax({ url: 'http://futureclasses.com/check.php',
                 data: { username: email, password: pwd }, // Convert a form to a JSON string representation
-                dataType: 'jsonp',
+                dataType: 'text',
                 type: 'GET',
-                async: true,
+                async: false,
                 cache: false,
                 crossDomain: true,
                 timeout: 5000,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
-                    $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+                    alet("beforesend");
+                    //$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
                 },
                 complete: function () {
                     // This callback function will trigger on data sent/received complete
-                    $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
+                    alert("complete");
+                    //$.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
                 },
                 success: function (data, textStatus, request) {
                     if (data.indexOf('responsive') != -1) {
@@ -53,14 +55,14 @@ function onDeviceReady() {
                     }
 
                 },
-                error: function(xhr, ajaxOptions, thrownError) {
-                        alert("error");
-                        alert(thrownError);
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert("error");
+                    alert(thrownError);
                 }
-//                error: function (request, error) {
-//                    // This callback function will trigger on unsuccessful action                
-//                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
-//                }
+                //                error: function (request, error) {
+                //                    // This callback function will trigger on unsuccessful action                
+                //                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
+                //                }
             });
         } else {
             alert('Please enter Username & Password.');
