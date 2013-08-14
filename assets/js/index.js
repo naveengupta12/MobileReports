@@ -24,8 +24,8 @@ $(document).on('click', '#submit', function () { // catch the form's submit even
 
         $.ajax({ url: 'http://futureclasses.com/check.php',
             data: { username: email, password: pwd }, // Convert a form to a JSON string representation
-            dataType: 'text',
-            type: 'post',
+            dataType: 'jsonp',
+            type: 'GET',
             async: true,
             cache: false,
             crossDomain: true,
