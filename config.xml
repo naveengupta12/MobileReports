@@ -2,7 +2,7 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	id		= "com.karya.mobilereports"
-	version 	= "1.5.0">
+	version 	= "1.6.0">
 
 	<name>Mobile Reports</name>
 
@@ -23,15 +23,14 @@
 	<icon src="blurry.png" gap:role="default" />
 
     <gap:splash src="weirdo.png" />
-  
-  <access origin="http://futureclasses.com" subdomains="true"/>
+ 
 
   
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
   
   	
-  <access origin="http://192.168.1.168" subdomains="true"/>
+  <access origin="http://192.168.1.57" subdomains="true"/>
   <!-- 
   <access subdomains="true" uri="http://192.168.1.168"/>
   <access subdomains="true" uri="http://192.168.1.168*"/>

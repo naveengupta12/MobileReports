@@ -26,11 +26,11 @@ function onDeviceReady() {
                 window.localStorage.clear();
             }
             alert("starting ajax");
-            $.ajax({ url: 'http://192.168.1.168/mr/check.php',
+            $.ajax({ url: 'http://192.168.1.57/OEGServer/Classes/Handler.ashx',
                 data: { username: email, password: pwd }, // Convert a form to a JSON string representation
                 dataType: 'text',
-                type: 'GET',
-                async: false,
+                type: 'POST',
+                async: true,
                 cache: false,
                 crossDomain: true,
                 timeout: 5000,
