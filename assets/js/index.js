@@ -9,8 +9,7 @@ function onDeviceReady() {
         }, false);
         $.support.cors = true;
         $.mobile.allowCrossDomainPages = true;
-        alert("onDeviceReady");
-
+       
     }
 
     $(document).on('click', '#submit', function () { // catch the form's submit event
@@ -25,7 +24,7 @@ function onDeviceReady() {
             } else {
                 window.localStorage.clear();
             }
-            alert("starting ajax");
+            
             $.ajax({ url: 'http://192.168.1.57/OEGServer/Classes/Handler.ashx',
                 data: { username: email, password: pwd }, // Convert a form to a JSON string representation
                 dataType: 'text',
@@ -36,13 +35,13 @@ function onDeviceReady() {
                 timeout: 5000,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
-                    alert("beforesend");
-                    //$.mobile.showPageLoadingMsg(true); // This will show ajax spinner
+                    
+                    $.mobile.showPageLoadingMsg(true); // This will show ajax spinner
                 },
                 complete: function () {
                     // This callback function will trigger on data sent/received complete
-                    alert("complete");
-                    //$.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
+                    
+                    $.mobile.hidePageLoadingMsg(); // This will hide ajax spinner
                 },
                 success: function (data, textStatus, request) {
                     if (data.indexOf('responsive') != -1) {
@@ -55,10 +54,6 @@ function onDeviceReady() {
                     }
 
                 },
-//                error: function (xhr, ajaxOptions, thrownError) {
-//                    alert("error");
-//                    alert(thrownError);
-//                }
                 error: function (request, error) {
                      // This callback function will trigger on unsuccessful action                
                    alert('Network error has occurred please try again!, readyState:' + request.readyState + " status:" + request.status + " statusText:" + request.statusText + " response:" + request.responseText);
