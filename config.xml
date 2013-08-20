@@ -2,12 +2,12 @@
 <widget xmlns		= "http://www.w3.org/ns/widgets"
 	xmlns:gap	= "http://phonegap.com/ns/1.0"
 	id		= "com.karya.mobilereports"
-	version 	= "1.8.0">
+	version 	= "1.9.0">
 
-	<name>Mobile Reports</name>
+	<name>Oeg Reports</name>
 
 	<description>
-		Mobile Reports
+		OEG Mobile Reports
 	</description>
 
 	<author href="http://www.karyatech.com"
@@ -23,26 +23,26 @@
 
   <!-- Define app icon for each platform. -->
   <icon src="icon.png" />
-  <icon src="assets/img/icons/android/ldpi.png"   gap:platform="android"    gap:density="ldpi" />
-  <icon src="assets/img/icons/android/mdpi.png"   gap:platform="android"    gap:density="mdpi" />
-  <icon src="assets/img/icons/android/hdpi.png"   gap:platform="android"    gap:density="hdpi" />
-  <icon src="assets/img/icons/android/xhdpi.png"  gap:platform="android"    gap:density="xhdpi" />
-  <icon src="assets/img/icons/blackberry/icon.png"     gap:platform="blackberry" />
-  <icon src="assets/img/icons/iphone/ios57.png"            gap:platform="ios"        width="57" height="57" />
-  <icon src="assets/img/icons/iphone/ios72.png"            gap:platform="ios"        width="72" height="72" />
-  <icon src="assets/img/icons/iphone/ios114.png"         gap:platform="ios"        width="114" height="114" />
-  <icon src="assets/img/icons/iphone/ios144.png"         gap:platform="ios"        width="144" height="144" />
+  <icon src="assets/img/icons/android/ldpi.png" gap:platform="android" gap:density="ldpi" />
+  <icon src="assets/img/icons/android/mdpi.png" gap:platform="android" gap:density="mdpi" />
+  <icon src="assets/img/icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
+  <icon src="assets/img/icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
+  <icon src="assets/img/icons/blackberry/icon.png" gap:platform="blackberry" />
+  <icon src="assets/img/icons/iphone/ios57.png" gap:platform="ios" width="57" height="57" />
+  <icon src="assets/img/icons/iphone/ios72.png" gap:platform="ios" width="72" height="72" />
+  <icon src="assets/img/icons/iphone/ios114.png" gap:platform="ios" width="114" height="114" />
+  <icon src="assets/img/icons/iphone/ios144.png" gap:platform="ios" width="144" height="144" />
 
 
   <!-- Define app splash screen for each platform. -->
   <gap:splash src="weirdo.png" />
-  <gap:splash src="weirdo.png"    gap:platform="ios"     width="320" height="480" />
-  <gap:splash src="weirdox2.png" gap:platform="ios"     width="640" height="960" />
-  <gap:splash src="weirdox2a.png" gap:platform="ios"     width="640" height="1136" />
+  <gap:splash src="weirdo.png" gap:platform="ios" width="320" height="480" />
+  <gap:splash src="weirdox2.png" gap:platform="ios" width="640" height="960" />
+  <gap:splash src="weirdox2a.png" gap:platform="ios" width="640" height="1136" />
   
   
 	<!-- <preference name="autorotate" value="false" readonly="true"/> -->
-  <preference name="phonegap-version"           value="2.9.0" />
+  <preference name="phonegap-version" value="2.9.0" />
   <preference name="detect-data-types" value="false" />
   <preference name="disable-cursor" value="true" />
   <preference name="android-minSdkVersion" value="14" />
