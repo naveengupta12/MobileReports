@@ -25,14 +25,14 @@ function onDeviceReady() {
                 window.localStorage.clear();
             }
 
-            $.ajax({ url: 'http://192.168.1.57/OEGServer/Classes/DGRReport.ashx',
+            $.ajax({ url: 'http://182.74.37.76/OEGReports/Classes/DGRReport.ashx',
                 data: { username: email, password: pwd }, // Convert a form to a JSON string representation
                 dataType: 'text',
                 type: 'POST',
                 async: true,
                 cache: false,
                 crossDomain: true,
-                timeout: 5000,
+                timeout: 10000,
                 beforeSend: function () {
                     // This callback function will trigger before data is sent
                     

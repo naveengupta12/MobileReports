@@ -4,7 +4,7 @@
 	id		= "com.karya.mobilereports"
 	version 	= "1.9.0">
 
-	<name>Oeg Reports</name>
+	<name>OEG Reports</name>
 
 	<description>
 		OEG Mobile Reports
@@ -19,7 +19,7 @@
 	<feature name="http://api.phonegap.com/1.0/network"/>
   
 
-  <access origin="http://192.168.1.57" subdomains="true"/>
+  <access origin="http://182.74.37.76" subdomains="true"/>
 
   <!-- Define app icon for each platform. -->
   <icon src="icon.png" />
